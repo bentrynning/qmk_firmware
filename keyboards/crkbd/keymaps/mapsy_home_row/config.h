@@ -9,6 +9,10 @@
 // Require a short idle period before allowing hold-tap to activate
 #define QUICK_TAP_TERM 120  // Prevent accidental holds during fast typing
 
+// Chordal Hold: home row mods only trigger if the other key is on the opposite hand
+// (replaces "Bilateral Combinations" concept from older QMK versions)
+#define CHORDAL_HOLD
+
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 // #define TAPPING_FORCE_HOLD  // Disabled - can make typing feel less responsive
 
