@@ -53,55 +53,6 @@ enum custom_keycodes {
     REC_SCRN,   // Cmd+Shift+5 - Record screen
 };
 
-// QMK Native Combo Definitions
-// Define combo key sequences for QWERTY layout
-
-// Parentheses combos
-const uint16_t PROGMEM combo_lparen[] = {KC_D, KC_F, COMBO_END}; // Left parenthesis (
-const uint16_t PROGMEM combo_rparen[] = {KC_J, KC_K, COMBO_END}; // Right parenthesis )
-
-// Brackets combos
-const uint16_t PROGMEM combo_lbracket[] = {KC_E, KC_R, COMBO_END}; // Left bracket [
-const uint16_t PROGMEM combo_rbracket[] = {KC_U, KC_I, COMBO_END}; // Right bracket ]
-
-// Braces combos
-const uint16_t PROGMEM combo_lbrace[] = {KC_C, KC_V, COMBO_END}; // Left brace {
-const uint16_t PROGMEM combo_rbrace[] = {KC_M, KC_COMM, COMBO_END}; // Right brace }
-
-// Comparison operators
-const uint16_t PROGMEM combo_less[] = {KC_W, KC_E, COMBO_END}; // Less than <
-const uint16_t PROGMEM combo_greater[] = {KC_I, KC_O, COMBO_END}; // Greater than >
-
-// Special characters
-const uint16_t PROGMEM combo_tilde[] = {KC_A, KC_S, COMBO_END}; // Tilde ~
-const uint16_t PROGMEM combo_grave[] = {KC_S, KC_D, COMBO_END}; // Grave `
-
-// Math operators
-const uint16_t PROGMEM combo_plus[] = {KC_R, KC_U, COMBO_END}; // Plus +
-const uint16_t PROGMEM combo_minus[] = {KC_V, KC_M, COMBO_END}; // Minus -
-const uint16_t PROGMEM combo_equal[] = {KC_F, KC_J, COMBO_END}; // Equal =
-const uint16_t PROGMEM combo_asterisk[] = {KC_E, KC_I, COMBO_END}; // Asterisk *
-const uint16_t PROGMEM combo_underscore[] = {KC_R, KC_T, COMBO_END}; // Underscore _
-
-// Special functions
-const uint16_t PROGMEM combo_word_del[] = {KC_4, KC_5, COMBO_END}; // Word delete (Alt+Backspace)
-
-// Emoji combos
-const uint16_t PROGMEM combo_emoji_hands[] = {KC_T, KC_Y, COMBO_END}; // Raising hands emoji 🙌🏼
-const uint16_t PROGMEM combo_emoji_laugh[] = {KC_G, KC_H, COMBO_END}; // Laughing emoji 😂
-const uint16_t PROGMEM combo_emoji_heart[] = {KC_B, KC_N, COMBO_END}; // Heart emoji ❤️
-
-// Additional symbol combos
-const uint16_t PROGMEM combo_exclamation[] = {KC_Y, KC_U, COMBO_END}; // Exclamation mark !
-const uint16_t PROGMEM combo_ampersand[] = {KC_D, KC_K, COMBO_END}; // Ampersand &
-const uint16_t PROGMEM combo_dollar[] = {KC_S, KC_L, COMBO_END}; // Dollar sign $
-const uint16_t PROGMEM combo_hash[] = {KC_F, KC_G, COMBO_END}; // Hash symbol #
-const uint16_t PROGMEM combo_at[] = {KC_H, KC_J, COMBO_END}; // At symbol @
-const uint16_t PROGMEM combo_percent[] = {KC_V, KC_B, COMBO_END}; // Percent symbol %
-const uint16_t PROGMEM combo_caret[] = {KC_N, KC_M, COMBO_END}; // Caret symbol ^
-const uint16_t PROGMEM combo_backslash[] = {KC_K, KC_L, COMBO_END}; // Backslash
-const uint16_t PROGMEM combo_pipe[] = {KC_L, KC_SCLN, COMBO_END}; // Pipe |
-
 // ═══════════════════════════════════════════════════════════════════════════
 // BITWISE FUNCTION KEY INPUT IMPLEMENTATION
 // ═══════════════════════════════════════════════════════════════════════════
@@ -166,50 +117,6 @@ bool process_bitwise_f(uint16_t keycode, keyrecord_t *record) {
     return false; // Don't process this key normally
 }
 
-// Define the combo arrays for QMK native combo system
-combo_t key_combos[] = {
-    // QWERTY layout combos
-    COMBO(combo_lparen, LSFT(KC_9)),           // Left parenthesis (
-    COMBO(combo_rparen, LSFT(KC_0)),           // Right parenthesis )
-    COMBO(combo_lbracket, KC_LBRC),             // Left bracket [
-    COMBO(combo_rbracket, KC_RBRC),             // Right bracket ]
-    COMBO(combo_lbrace, LSFT(KC_LBRC)),         // Left brace {
-    COMBO(combo_rbrace, LSFT(KC_RBRC)),         // Right brace }
-    COMBO(combo_less, LSFT(KC_COMM)),           // Less than <
-    COMBO(combo_greater, LSFT(KC_DOT)),         // Greater than >
-    COMBO(combo_tilde, LSFT(KC_GRV)),           // Tilde ~
-    COMBO(combo_grave, KC_GRV),                 // Grave `
-    COMBO(combo_plus, LSFT(KC_EQL)),            // Plus +
-    COMBO(combo_minus, KC_MINS),                // Minus -
-    COMBO(combo_equal, KC_EQL),                 // Equal =
-    COMBO(combo_asterisk, LSFT(KC_8)),          // Asterisk *
-    COMBO(combo_underscore, LSFT(KC_MINS)),     // Underscore _
-    COMBO(combo_word_del, LALT(KC_BSPC)),       // Word delete (Alt+Backspace)
-    COMBO(combo_emoji_hands, EMOJI_HANDS),      // Raising hands emoji 🙌🏼
-    COMBO(combo_emoji_laugh, EMOJI_LAUGH),      // Laughing emoji 😂
-    COMBO(combo_emoji_heart, EMOJI_HEART),      // Heart emoji ❤️
-    COMBO(combo_exclamation, LSFT(KC_1)),       // Exclamation mark !
-    COMBO(combo_ampersand, LSFT(KC_7)),         // Ampersand &
-    COMBO(combo_dollar, LSFT(KC_4)),            // Dollar sign $
-    COMBO(combo_hash, LSFT(KC_3)),              // Hash symbol #
-    COMBO(combo_at, LSFT(KC_2)),                // At symbol @
-    COMBO(combo_percent, LSFT(KC_5)),           // Percent symbol %
-    COMBO(combo_caret, LSFT(KC_6)),             // Caret symbol ^
-    COMBO(combo_backslash, KC_BSLS),            // Backslash
-    COMBO(combo_pipe, LSFT(KC_BSLS)),           // Pipe |
-};
-
-uint16_t COMBO_LEN = ARRAY_SIZE(key_combos);
-
-// Disable combos when gaming layer is active
-bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
-    // Disable all combos on gaming layer
-    if (layer_state_is(_GAME)) {
-        return false;
-    }
-    return true;
-}
-
 // ═══════════════════════════════════════════════════════════════════════════
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -219,42 +126,48 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [0] = LAYOUT_split_3x6_3(
     //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        KC_TAB,   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,   KC_U,    KC_I,    KC_O,    KC_P,   KC_BSPC,
+        KC_TILD,   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                       KC_Y,   KC_U,    KC_I,    KC_O,    KC_P,   KC_BSPC,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        KC_LCTL,  KC_A,   LALT_T(KC_S), LCTL_T(KC_D), LGUI_T(KC_F), KC_G,           KC_H,   RGUI_T(KC_J), RCTL_T(KC_K), RALT_T(KC_L), KC_SCLN, KC_QUOT,
+        KC_TAB,  LSFT_T(KC_A),   LALT_T(KC_S), LCTL_T(KC_D), LGUI_T(KC_F), KC_G,  KC_H,   RGUI_T(KC_J), RCTL_T(KC_K), RALT_T(KC_L), RSFT_T(KC_SCLN), KC_QUOT,
     //|--------+--------+--------+--------+-------+--------|                     |--------+--------+--------+--------+--------+--------|
-        KC_LSFT,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,   KC_M,   KC_COMM, KC_DOT,  KC_SLSH,  RSFT_T(KC_ESC),
+        KC_LSFT,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,   KC_M,   KC_COMM, KC_DOT,  KC_SLSH,  KC_RSFT,
     //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                        KC_LGUI, LT(2, KC_ESC), KC_SPC,   KC_ENT, MO(1), KC_RALT
+                                        KC_LGUI, LT(2, KC_ESC), KC_SPC,   KC_ENT, LT(1, KC_BSPC), KC_RALT
                                        //`--------------------------'  `--------------------------'
     ),
     // ═══════════════════════════════════════════════════════════════════════════
-    // LAYER 1: NAVIGATION / MEDIA LAYER 
+    // LAYER 1: NUMBERS / NAVIGATION LAYER
+    // Left:  - 7 8 9 + / 4 5 6 * / 1 2 3 /  thumb: . 0
+    // Right: Home PgDn PgUp End / Left Down Up Right / Ins PrtSc ScrLk Pause
     // ═══════════════════════════════════════════════════════════════════════════
     [1] = LAYOUT_split_3x6_3(
     //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        KC_NO,   KC_NO,   KC_VOLD, KC_MUTE, KC_VOLU, BL_UP,                        KC_HOME, KC_PGDN, KC_PGUP,  KC_END, _______, _______,
+        _______, KC_MINS, KC_7,    KC_8,    KC_9,    LSFT(KC_EQL),                 KC_HOME, KC_PGDN, KC_PGUP, KC_END,  _______, _______,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        _______, _______, KC_MPRV, KC_MPLY, KC_MNXT, BL_DOWN,                      KC_LEFT, KC_DOWN,  KC_UP,  KC_RGHT, _______, _______,
+        _______, XXXXXXX, KC_4,    KC_5,    KC_6,    LSFT(KC_8),                   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        _______, _______, _______, KC_COPY, KC_PSTE, _______,                      KC_INS, KC_PSCR, KC_SCRL, KC_PAUS,  _______, _______,
+        _______, XXXXXXX, KC_1,    KC_2,    KC_3,    KC_SLSH,                      KC_INS,  KC_PSCR, KC_SCRL, KC_PAUS, _______, _______,
     //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                            _______, _______, _______,    _______, _______, _______
-                                        //`--------------------------'  `--------------------------'
+                                            KC_DOT,  KC_0,  _______,    _______, _______, _______
+                                        //`--------------------------'  `--------------------------'                                        
     ),
 
+    
     // ═══════════════════════════════════════════════════════════════════════════
-    // LAYER 2: NUMBERS / SYMBOLS LAYER
+    // LAYER 2: SYMBOLS LAYER
     // ═══════════════════════════════════════════════════════════════════════════
+
+    // Left:  [ { } \  |  ! @ # $ %  |  (pass-through)
+    // Right: ^ ( ) ] ~ Bspc  |  * - = \ ` _  |  & - + | /
     [2] = LAYOUT_split_3x6_3(
     //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        _______, SYM_PERCENT, SYM_CARET, SYM_EURO, SYM_DOLLAR, SYM_ARROW,          KC_MINS,   KC_7,    KC_8,    KC_9,  KC_EQL, _______,
+        KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                     KC_CIRC, KC_UNDS, KC_PLUS, _______, _______, KC_BSPC,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_PLUS,   KC_4,    KC_5,    KC_6, KC_ASTR, XXXXXXX,
+        _______, _______, KC_LBRC, KC_LCBR, KC_RCBR, _______,                     KC_ASTR, KC_LPRN, KC_RPRN, KC_RBRC, KC_BSLS, KC_GRV,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_DOT,    KC_1,    KC_2,    KC_3, KC_SLSH, _______,
+        _______, _______, _______, _______, _______, _______,                     KC_AMPR, KC_MINS, KC_EQL,  KC_PIPE, KC_SLSH, _______,
     //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                            _______, _______, _______,       LT(3, KC_ENT), KC_0, _______
+                                            _______, _______, _______,    _______, MO(3), _______
                                         //`--------------------------'  `--------------------------'
     ),
 
@@ -265,11 +178,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Example: A+D = 1+4 = 5 = F5, S+F = 2+8 = 10 = F10, etc.
     [3] = LAYOUT_split_3x6_3(
     //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, CAP_DESK, XXXXXXX, XXXXXXX, XXXXXXX, TOGGLE_LAYOUT,
+        XXXXXXX, XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, BL_UP,                       XXXXXXX, CAP_DESK, XXXXXXX, XXXXXXX, XXXXXXX, TOGGLE_LAYOUT,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        _______, BIT_0,   BIT_1,   BIT_2,   BIT_3,   BIT_4,                       XXXXXXX, CAP_AREA, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        _______, UG_PREV, KC_MPRV, KC_MPLY, KC_MNXT, BL_DOWN,                     XXXXXXX, CAP_AREA, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, REC_SCRN, XXXXXXX, XXXXXXX, XXXXXXX, TOGGLE_GAMING,
+        _______, UG_TOGG, UG_NEXT, UG_HUEU, UG_SATU, UG_SATD,                    XXXXXXX, REC_SCRN, XXXXXXX, XXXXXXX, XXXXXXX, TOGGLE_GAMING,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
                                             _______, _______, _______,    _______, _______, _______
                                         //`--------------------------'  `--------------------------'
