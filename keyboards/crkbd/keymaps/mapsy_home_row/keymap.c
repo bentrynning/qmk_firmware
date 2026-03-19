@@ -5,8 +5,6 @@
 // OS detection state
 static bool isApple = false;
 
-// Tap dance state for ESC/TAB/FN layer
-
 #define XXXXXXX KC_NO
 
 // Caps lock toggle state tracking
@@ -435,6 +433,36 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // Custom combo logic removed - now using QMK native combos
 
     return true;
+}
+
+// LT thumb keys default to hold (layer) whenever another key is pressed while held.
+// Only a clean press-and-release on its own registers as a tap (KC_BSPC / KC_ESC).
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LT(1, KC_BSPC):
+        case LT(2, KC_ESC):
+            return true;
+        default:
+            return false;
+    }
+}
+
+// Chordal hold only applies to the 8 home row mod-tap keys.
+// All other tap-hold keys (e.g. LT thumb keys) always resolve as hold normally.
+bool get_chordal_hold(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, uint16_t other_keycode, keyrecord_t *other_record) {
+    switch (tap_hold_keycode) {
+        case LSFT_T(KC_A):
+        case LALT_T(KC_S):
+        case LCTL_T(KC_D):
+        case LGUI_T(KC_F):
+        case RGUI_T(KC_J):
+        case RCTL_T(KC_K):
+        case RALT_T(KC_L):
+        case RSFT_T(KC_SCLN):
+            return get_chordal_hold_default(tap_hold_record, other_record);
+        default:
+            return true;
+    }
 }
 
 bool wpm_keycode_user(uint16_t keycode) {
