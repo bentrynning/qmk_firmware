@@ -176,9 +176,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Example: A+D = 1+4 = 5 = F5, S+F = 2+8 = 10 = F10, etc.
     [3] = LAYOUT_split_3x6_3(
     //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        XXXXXXX, XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, BL_UP,                       XXXXXXX, CAP_DESK, XXXXXXX, XXXXXXX, XXXXXXX, TOGGLE_LAYOUT,
+        _______, _______, KC_VOLD, KC_MUTE, KC_VOLU, UG_VALU                       XXXXXXX, CAP_DESK, XXXXXXX, XXXXXXX, XXXXXXX, TOGGLE_LAYOUT,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        _______, UG_PREV, KC_MPRV, KC_MPLY, KC_MNXT, BL_DOWN,                     XXXXXXX, CAP_AREA, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        _______, UG_PREV, KC_MPRV, KC_MPLY, KC_MNXT, UG_VALD,                     XXXXXXX, CAP_AREA, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         _______, UG_TOGG, UG_NEXT, UG_HUEU, UG_SATU, UG_SATD,                    XXXXXXX, REC_SCRN, XXXXXXX, XXXXXXX, XXXXXXX, TOGGLE_GAMING,
     //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
