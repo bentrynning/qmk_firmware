@@ -14,6 +14,7 @@
 
 // Apply the modifier on keys that are tapped during a short hold of a modtap
 // #define PERMISSIVE_HOLD  // Disabled - can interfere with fast typing
+#define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
 
 #define OLED_TIMEOUT 5000
 
