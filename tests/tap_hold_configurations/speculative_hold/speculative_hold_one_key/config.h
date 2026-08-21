@@ -1,4 +1,5 @@
-/* Copyright 2020 QMK
+/* Copyright 2022 Vladislav Kucheriavykh
+ * Copyright 2026 Google LLC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,12 +14,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 #pragma once
 
-#include_next <mcuconf.h>
+#include "test_common.h"
 
-#undef RP_I2C_USE_I2C1
-#define RP_I2C_USE_I2C1 TRUE
-
-#undef RP_I2C_USE_I2C0
-#define RP_I2C_USE_I2C0 TRUE
+#define SPECULATIVE_HOLD
+#define SPECULATIVE_HOLD_ONE_KEY
+#define DUMMY_MOD_NEUTRALIZER_KEYCODE KC_F24
